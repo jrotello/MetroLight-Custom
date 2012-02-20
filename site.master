@@ -39,17 +39,17 @@
             </table>
 
             <table id="toptiles">
-                <tr>
-                    <td>&nbsp;</td>
-                    <td class="bluetile feed"><a href="<%=Utils.FeedUrl %>"><span><%=Resources.labels.subscribe %></span></a></td>
-                    <td>&nbsp;</td>
+                <tr>                    
+                    <td class="bluetile home"><a href="<%=Utils.AbsoluteWebRoot %>"><span>Home</span></a></td>
+                    <td class="bluetile resume"><a href="<%=Utils.AbsoluteWebRoot %>page/resume.aspx"><span>Resume</span></a></td>
                     <td class="bluetile contact"><a href="<%=Utils.AbsoluteWebRoot %>contact.aspx"><span><%=Resources.labels.contact %></span></a></td>
+                    <td class="bluetile archive"><a href="<%=Utils.AbsoluteWebRoot%>archive.aspx"><span><%=Resources.labels.archive%></span></a></td>
                 </tr>
                 <tr>
-                    <td class="bluetile archive"><a href="<%=Utils.AbsoluteWebRoot%>archive.aspx"><span><%=Resources.labels.archive%></span></a></td>
-                    <td class="bluetile facebook"><a href="#"><span>Facebook</span></a></td>
-                    <td class="bluetile twitter"><a href="#"><span>Twitter</span></a></td>
                     <td>&nbsp;</td>
+                    <td class="bluetile twitter"><a href="http://twitter.com/jasonrotello"><span>Twitter</span></a></td>
+                    <td class="bluetile linkedin"><a href="http://www.linkedin.com/in/jasonrotello"><span>LinkedIn</span></a></td>
+                    <td class="bluetile feed"><a href="<%=Utils.FeedUrl %>"><span><%=Resources.labels.subscribe %></span></a></td>                    
                 </tr>
             </table>
 

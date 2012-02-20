@@ -1,5 +1,5 @@
 ﻿/*
-Theme Name: MetroLight
+Theme Name: MetroLight-Custom
 */
 
 /* MAIN STYLES
@@ -9,7 +9,7 @@ Theme Name: MetroLight
 body,html {
 	font-weight:normal;
 	font-family: "Segoe UI",Arial,Helvetical,sans-serif;
-	font-size:14px;
+	font-size:16px;
 	color:#333;
 	line-height:22px;
 }
@@ -137,7 +137,7 @@ body#home #content, body#portfolio #content {
 #logo span 
 {
     font-size: 14px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: #AAA;
     position: absolute;
     left: 3px;
@@ -191,13 +191,14 @@ body#home #content, body#portfolio #content {
     width: 88px;
     vertical-align: bottom;
     border: 2px solid #fff;
+    text-align: center;
 }
 
 #toptiles td.bluetile {
     background-color: #1BA0E1;
 }
 
-#toptiles td.bluetile a, #toptiles td.bluetile a:hover  {
+#toptiles td.bluetile a {
     color: #fff;
     width: 88px;
     height: 88px;
@@ -205,18 +206,31 @@ body#home #content, body#portfolio #content {
     text-decoration: none;
 }
 
-#toptiles td.bluetile span {
-
-    position: relative;
-    top: 60px;
-    left: 5px;
+#toptiles td.bluetile a:hover {
+    color: #1BA0E1;
 }
 
-#toptiles td.bluetile.feed { background:url(images/feed.png) 0 0 no-repeat; background-color: #1BA0E1; }
-#toptiles td.bluetile.contact { background:url(images/contact.png) 0 0 no-repeat; background-color: #1BA0E1; }
-#toptiles td.bluetile.facebook { background:url(images/f.png) 0 0 no-repeat; background-color: #1BA0E1; }
-#toptiles td.bluetile.twitter { background:url(images/t.png) 0 0 no-repeat; background-color: #1BA0E1; }
-#toptiles td.bluetile.archive { background:url(images/archive.png) 0 0 no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile span {
+    position: relative;
+    top: 60px;
+    text-transform: lowercase;
+}
+
+#toptiles td.bluetile.home { background:url(images/home.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.feed { background:url(images/feed.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.contact { background:url(images/contact.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.twitter { background:url(images/twitter.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.archive { background:url(images/archive.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.resume { background:url(images/resume.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+#toptiles td.bluetile.linkedin { background:url(images/linkedin.png) 50% 25% no-repeat; background-color: #1BA0E1; }
+
+#toptiles td.bluetile.home:hover { background:url(images/home-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.feed:hover { background:url(images/feed-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.contact:hover { background:url(images/contact-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.twitter:hover { background:url(images/twitter-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.archive:hover { background:url(images/archive-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.resume:hover { background:url(images/resume-blue.png) 50% 25% no-repeat; background-color: #fff; }
+#toptiles td.bluetile.linkedin:hover { background:url(images/linkedin-blue.png) 50% 25% no-repeat; background-color: #fff; }
 
 /* CONTENT ELEMENTS
 -------------------------------------------*/
