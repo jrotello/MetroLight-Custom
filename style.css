@@ -403,6 +403,13 @@ blockquote {
 	text-transform:uppercase;
 }
 
+#page ul li {
+    list-style-position: outside;
+    margin-left: 16px;
+    list-style-image: url(images/bullet-list.png);
+    
+}
+
 /* COLRIGHT ELEMENTS 
 -------------------------------------*/
 
