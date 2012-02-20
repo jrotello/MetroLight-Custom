@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="StandardSite" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+ <head id="Head1" runat="server">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+     <link rel="shortcut icon" href="~/themes/MetroLight/metro.ico" type="image/x-icon"/>
+ </head>
+
+ <body>
+<!-- BEGINN MAINWRAPPER -->
+<div id="mainWrapper">
+    <form id="Form1" runat="Server">
+	<!-- BEGIN WRAPPER -->
+    <div id="wrapper">
+		<!-- BEGIN HEADER -->
+        <div id="header">         
+            <div id="logo">
+                <p><a href="<%=Blog.CurrentInstance.AbsoluteWebRoot %>"><%=BlogSettings.Instance.Name %></a></p>
+                <span><%=BlogSettings.Instance.Description %></span>
+            </div>
+
+            <table id="headerdate">
+                <tr>
+                    <td><span id="hdrmonth"><%=DateTime.Now.ToString("MMMM") %></span></td>
+                    <td><span id="hdrday"><%=DateTime.Now.Day.ToString("d") %></span></td>
+                    <td> 
+                        <input type="text" value="<%=BlogSettings.Instance.SearchDefaultText%>" 
+                          onblur="BlogEngine.searchClear('<%=BlogSettings.Instance.SearchDefaultText%>')" 
+                          onfocus="BlogEngine.searchClear('<%=BlogSettings.Instance.SearchDefaultText%>')" 
+                          onkeypress="if(event.keyCode==13) return BlogEngine.search('<%=Utils.RelativeWebRoot%>')" id="searchfield" />
+                    </td>
+                    <td>
+                        <input type="submit" value="" id="searchsubmit" onkeypress="BlogEngine.search('<%=Utils.RelativeWebRoot%>');" onclick="BlogEngine.search('<%=Utils.RelativeWebRoot%>');return false;"/>
+                    </td>
+                </tr>
+            </table>
+
+            <table id="toptiles">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="bluetile feed"><a href="<%=Utils.FeedUrl %>"><span><%=Resources.labels.subscribe %></span></a></td>
+                    <td>&nbsp;</td>
+                    <td class="bluetile contact"><a href="<%=Utils.AbsoluteWebRoot %>contact.aspx"><span><%=Resources.labels.contact %></span></a></td>
+                </tr>
+                <tr>
+                    <td class="bluetile archive"><a href="<%=Utils.AbsoluteWebRoot%>archive.aspx"><span><%=Resources.labels.archive%></span></a></td>
+                    <td class="bluetile facebook"><a href="#"><span>Facebook</span></a></td>
+                    <td class="bluetile twitter"><a href="#"><span>Twitter</span></a></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+        </div>
+        <!-- END HEADER -->
+		<!-- BEGIN CONTENT -->
+		<div id="content"> 
+	        <div id="colLeft">
+                <blog:SearchOnSearch ID="sos" runat="server" />
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />            
+			</div>
+		    <div id="colRight">
+                <blog:WidgetZone ID="WidgetZone1" runat="server" ZoneName="be_WIDGET_ZONE" />
+			</div>
+		</div>
+	    <!-- END CONTENT -->
+        <div id="footer">
+            <ul>
+                <li><a href="<%=Utils.AbsoluteWebRoot %>" rel="home"><%=Resources.labels.home %></a></li>
+                <li><a href="<%=Utils.AbsoluteWebRoot %>archive.aspx"><%=Resources.labels.archive %></a></li>
+                <li><a href="<%=Utils.FeedUrl %>" class="feed"><%=Resources.labels.subscribe %></a></li>
+                <% if (Security.IsAuthenticated){%>
+                <li><a href="<%=Blog.CurrentInstance.RelativeWebRoot %>account/logout.cshtml"><%=Resources.labels.logoff %></a></li>
+                <%}else{%>
+                <li><a href="<%=Blog.CurrentInstance.RelativeWebRoot %>account/login.aspx"><%=Resources.labels.login %></a></li>
+                <%}%>
+                
+            </ul>
+        </div>
+
+        <div id="copyright">
+            <span>&copy; <%=DateTime.Now.ToString("yyyy")%> <%=BlogSettings.Instance.Name %></span><br />
+            <span>Powered by <a href="http://dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %></span>
+        </div>
+	</div>
+    <!-- END WRAPPER --> 
+    </form>
+</div>
+<!-- END MAINWRAPPER -->
+</body>
+</html>
